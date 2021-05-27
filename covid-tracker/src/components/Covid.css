@@ -1,0 +1,116 @@
+* {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    border: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    -webkit-overflow-scrolling: touch;
+    font-family: 'Nunito', sans-serif;
+  
+  }
+  h2 {
+	color: blue;
+	font-size: 3vw;
+	position: relative;
+	text-transform: uppercase;
+	-webkit-text-stroke: 0.3vw #f7f7fe;
+}
+
+  h2::before {
+	top: 0;
+	left: 0;
+	width: 0;
+	height: 100%;
+	color: #242486;
+	overflow: hidden;
+	position: absolute;
+	content: attr(data-text);
+	border-right: 2px solid #242486;
+	-webkit-text-stroke: 0vw #f7f7fe;
+	animation: animate 6s linear infinite;
+}
+
+@keyframes animate {
+	0%,
+	10%,
+	100% {
+		width: 0;
+	}
+
+	70%,
+	90% {
+		width: 100%;
+	}
+}
+
+  h1{
+      text-align: center;
+      color: beige;
+  }
+  section {
+    background-color:#0f0f1b;
+    display:grid;
+    place-items:center;
+    height: 100vh;
+  }
+  .component-pricing-list {
+    text-align:center;
+  }
+  .pricing-list {
+     display:flex;
+    margin:0 -10px;
+     
+  }
+  .pricing-list li {
+    width:265px;
+    margin:0 10px;
+  } 
+  .pricing-list li a {
+    display:flex;
+    flex-direction:column;
+    width:100%;
+    height:267px;
+    background:#171727;
+    border-radius:20px;
+    padding:35px;
+    color:#fff;
+    text-align:left;
+    transition:300ms background;
+    position:relative;
+  }
+  .pricing-list li.actv a,
+  .pricing-list li a:hover {
+    background:#242486;
+  }
+  
+  .title {
+    font-size:22px;
+    font-weight:bold;
+    margin-bottom:20px;
+    font-family: 'Courier New', Courier, monospace;
+  }
+  .domain-title {
+    margin-bottom:35px;
+  }
+  .price {
+    font-weight:bold;
+    font-size:26px;
+    line-height:32px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+  .price span {
+    display:block;
+    font-size:16px;
+    font-weight:normal;
+    
+  }
+
+  .dot {
+    height: 20px;
+    width: 20px;
+    left: .5%;
+    background-color: red;
+    border-radius: 50%;
+    display: inline-block;
+  }
