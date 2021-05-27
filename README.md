@@ -1,2 +1,1 @@
-# Coviid_19-Tracker
-built using reactjs
+# Coviid_19-Tracker Using ReactJs
