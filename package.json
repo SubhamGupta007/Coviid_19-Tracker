@@ -1,6 +1,6 @@
 {
   "name": "covid-tracker",
-  "homepage": "http://SubhamGupta007.github.io/Coviid_19-Tracker",
+  "homepage": "http://SubhamGupta007.github.io/covid19_tracker",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

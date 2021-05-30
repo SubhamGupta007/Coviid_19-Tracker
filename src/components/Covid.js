@@ -4,6 +4,7 @@ import './Covid.css'
 export const Covid = () => {
 
     const [data, setdata] = useState([]);
+    const [data2, setdata2] = useState([]);
     const getcoviddata = async () => {
         try {
             const res = await fetch('	https://api.covid19india.org/data.json');
@@ -11,6 +12,7 @@ export const Covid = () => {
             const actualdata = await res.json();
             console.log(actualdata.statewise[0]);
             setdata(actualdata.statewise[0]);
+            setdata2(actualdata.statewise);
         } catch (err) {
             return err;
         }
@@ -54,58 +56,43 @@ export const Covid = () => {
                         </a></li>
                     </ul>
                 </div>
-                {/* <ul>
-                    <li className="component-pricing-list">
-                        <div className="pricing-list">
-                            <div className="card_inner">
-                                <p className="card__name">Our <span>Country</span></p>
-                                <p className="card__total card__small">INDIA</p>
-                            </div>
-                        </div>
-                    </li>
-                    <li className="card">
-                        <div className="card__main">
-                            <div className="card_inner">
-                                <p className="card__name">Total <span>Confirmed</span></p>
-                                <p className="card__total card__small">{data.confirmed}</p>
-                            </div>
-                        </div>
-                    </li>
+            </section>
+            <section className="scheme">
+                <div className="container-fluid mt-5">
+                    <div className="main-heading">
+                    </div>
+                    <div className="table-responsive">
+                        <table className="table table-hover">
+                            <thead className="thead-dark sticky">
+                                <tr>
+                                    <th>State</th>
+                                    <th>Confirmed</th>
+                                    <th>Recovered</th>
+                                    <th>Deaths</th>
+                                    <th>Last Updated</th>
 
-                    <li className="card">
-                        <div className="card__main">
-                            <div className="card_inner">
-                                <p className="card__name">Total <span>Recovered</span></p>
-                                <p className="card__total card__small">{data.recovered}</p>
-                            </div>
-                        </div>
-                    </li>
-                    <li className="card">
-                        <div className="card__main">
-                            <div className="card_inner">
-                                <p className="card__name">Total <span>Death</span></p>
-                                <p className="card__total card__small">{data.deaths}</p>
-                            </div>
-                        </div>
-                    </li>
-                    <li className="card">
-                        <div className="card__main">
-                            <div className="card_inner">
-                                <p className="card__name">Total <span>Active</span></p>
-                                <p className="card__total card__small">{data.active}</p>
-                            </div>
-                        </div>
-                    </li>
-                    <li className="card">
-                        <div className="card__main">
-                            <div className="card_inner">
-                                <p className="card__name">Last <span>Updated</span></p>
-                                <p className="card__total card__small">{data.lastupdatedtime}</p>
-                            </div>
-                        </div>
-                    </li>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {
+                                    data2.map((curelem, ind) => {
+                                        return (
+                                            <tr>
+                                                <th>{curelem.state}</th>
+                                                <th>{curelem.confirmed}</th>
+                                                <th>{curelem.recovered}</th>
+                                                <th>{curelem.deaths}</th>
+                                                <th>{curelem.lastupdatedtime}</th>
 
-                </ul> */}
+                                            </tr>
+                                        )
+                                    })
+
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </section>
         </>
     )

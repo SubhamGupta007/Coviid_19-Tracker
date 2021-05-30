@@ -114,3 +114,34 @@
     border-radius: 50%;
     display: inline-block;
   }
+
+  .container-fluid{
+    width:90%;
+    margin:auto;
+  }
+  .table-responsive{
+    max-height: 700px;
+    box-shadow: rgba(0,0,0,0.25) 0px 25px 50px;
+    background-color: #242424;
+    overflow-y: scroll;
+  }
+
+  .table td,.table th{
+    width: 100%;
+    padding:1.75rem;
+    vertical-align: top;
+    border-top: none;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .thead-dark{
+    font-weight: bold;
+    text-transform: capitalize;
+    background-color:#242486;
+    color: white;
+  }
+  tbody th {
+    background-color: white;
+  }
+ 
